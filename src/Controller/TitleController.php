@@ -7,10 +7,7 @@ use Interop\Container\ContainerInterface;
 class TitleController extends Controller
 {
 
-    protected function getModelName()
-    {
-        return 'title';
-    }
+    protected $modelName = 'title';
 
     public function random($request, $response, $args)
     {

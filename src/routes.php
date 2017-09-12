@@ -12,6 +12,11 @@ $routes = [
         'methods' => ['GET'],
         'controller' => \Controller\TitleController::class,
         'controllerMethod' => ":random"
+    ],
+    '/project[/{id}]' => [
+        'name' => 'project',
+        'methods' => ['GET'],
+        'controller' => \Controller\ProjectController::class
     ]
 ];
 

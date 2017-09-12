@@ -2,34 +2,10 @@
 
 namespace Model;
 
-use Interop\Container\ContainerInterface;
-
-
-class Title
+class Title extends Model
 {
-    protected $container;
+    protected $modelName = 'title';
 
-    public function __construct(ContainerInterface $container)
-    {
-        $this->container = $container;
-    }
-
-    public function get(string $id = null)
-    {
-        $em = $this->container['entityManager'];
-        if ($id !== null) {
-            $res = $em->getRepository('Entity\Title')->find($id);
-            $data = ['title' => $res->getTitle()];
-        } else {
-            $res = $em->getRepository('Entity\Title')->findAll();
-            $data = [];
-            foreach($res as $ent) {
-                $data[] = ['title' => $ent->getTitle()];
-            }
-        }
-        return $data;        
-    }
-    
     public function random()
     {
         $em = $this->container['entityManager'];

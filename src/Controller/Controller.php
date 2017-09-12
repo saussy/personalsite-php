@@ -4,10 +4,11 @@ namespace Controller;
 
 use Interop\Container\ContainerInterface;
 
-class Controller
+abstract class Controller
 {
 
     protected $container;
+    protected $modelName;
     
     public function __construct(ContainerInterface $container)
     {
@@ -34,6 +35,11 @@ class Controller
             $this->instantiateModel($this->getModelName());
         }
         return $this->model;
+    }
+
+    protected function getModelName()
+    {
+        return $this->modelName;
     }
 
     public function get($request, $response, $args)

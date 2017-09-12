@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  **/
 class Title
 {
+    use \Traits\ToArrayTrait;
+
     /**
      * @ORM\Id
      * @ORM\Column(name="id", type="integer")
@@ -31,4 +33,5 @@ class Title
     {
         return $this->title;
     }
+
 }

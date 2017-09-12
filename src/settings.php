@@ -13,7 +13,8 @@ return [
 
         // Models
         'models' => [
-            'title' => '\Model\Title'            
+            'title' => '\Model\Title',
+            'project' => '\Model\Project'            
         ],
 
         //Doctrine settings
