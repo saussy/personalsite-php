@@ -17,18 +17,16 @@ $routes = [
         'name' => 'project',
         'methods' => ['GET'],
         'controller' => \Controller\ProjectController::class
+    ],
+    '/post[/{id}]' => [
+        'name' => 'post',
+        'methods' => ['GET'],
+        'controller' => \Controller\PostController::class
     ]
 ];
 
 foreach($routes as $route => $routeInfo) {
+    $app->getContainer()['logger']->info("Title requested");    
     $controllerMethod = empty($routeInfo['controllerMethod']) ? ':route' : $routeInfo['controllerMethod'];
     $app->map($routeInfo['methods'], $route, $routeInfo['controller'] . $controllerMethod)->setName($routeInfo['name']);
-}
-
-function getTitle($request, $response, $args)
-{
-    global $app;
-    $app->getContainer()['logger']->info("Title requested");
-    $newResponse = $response->withJson(['title' => "Uber, but for sarcasm"]);
-    return $newResponse;
 }

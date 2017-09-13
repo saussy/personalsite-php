@@ -14,7 +14,8 @@ return [
         // Models
         'models' => [
             'title' => '\Model\Title',
-            'project' => '\Model\Project'            
+            'project' => '\Model\Project',
+            'post' => '\Model\Post'
         ],
 
         //Doctrine settings
