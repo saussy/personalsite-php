@@ -2,8 +2,6 @@
 
 namespace Controller;
 
-use Interop\Container\ContainerInterface;
-
 class TitleController extends Controller
 {
 

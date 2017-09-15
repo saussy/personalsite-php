@@ -2,7 +2,7 @@
 // Routes
 
 $routes = [
-    '/title[/{id}]' => [
+    '/titles[/{id}]' => [
         'name' => 'title',
         'methods' => ['GET'],
         'controller' => \Controller\TitleController::class,
@@ -13,12 +13,12 @@ $routes = [
         'controller' => \Controller\TitleController::class,
         'controllerMethod' => ":random"
     ],
-    '/project[/{id}]' => [
+    '/projects[/{id}]' => [
         'name' => 'project',
         'methods' => ['GET'],
         'controller' => \Controller\ProjectController::class
     ],
-    '/post[/{id}]' => [
+    '/posts[/{id}]' => [
         'name' => 'post',
         'methods' => ['GET'],
         'controller' => \Controller\PostController::class
